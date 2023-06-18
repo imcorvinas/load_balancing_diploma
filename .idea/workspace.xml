@@ -9,29 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b17b577-b9a6-469a-9f2b-2ddff6e812b9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sevsu/loadbalancingdiploma/LoadBalance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sevsu/loadbalancingdiploma/LoadBalancingApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sevsu/loadbalancingdiploma/LoadBalancingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sevsu/loadbalancingdiploma/MamdaniAlgorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sevsu/loadbalancingdiploma/Rule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sevsu/loadbalancingdiploma/Variable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/rules.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sevsu/loadbalancingdiploma/loadbalancing-view.fxml" afterDir="false" />
+    <list default="true" id="0b17b577-b9a6-469a-9f2b-2ddff6e812b9" name="Changes" comment="Добавлена строка Меню с возможность сохранить/загрузить правила, пофикшен порядок полей для инициализации переменных">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,12 +45,6 @@
                 <item name="LoadBalancingDiploma" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="application" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="LoadBalancingDiploma" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -228,6 +201,14 @@
       <option name="presentableId" value="Default" />
       <updated>1685924887235</updated>
     </task>
+    <task id="LOCAL-00001" summary="Добавлена строка Меню с возможность сохранить/загрузить правила, пофикшен порядок полей для инициализации переменных">
+      <created>1687125509733</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1687125509733</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -235,7 +216,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -243,5 +236,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Добавлена строка Меню с возможность сохранить/загрузить правила, пофикшен порядок полей для инициализации переменных" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлена строка Меню с возможность сохранить/загрузить правила, пофикшен порядок полей для инициализации переменных" />
   </component>
 </project>
