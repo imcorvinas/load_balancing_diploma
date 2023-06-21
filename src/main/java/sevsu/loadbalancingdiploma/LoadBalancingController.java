@@ -168,19 +168,52 @@ public class LoadBalancingController {
     //инициализировать переменные
     @FXML
     protected void initializeVariables() {
-        arr_variable[0] = new Variable(Integer.parseInt(getA1Field.getText()), Integer.parseInt(getB1Field.getText()), Integer.parseInt(getF1Field.getText()), Integer.parseInt(getD1Field.getText()), Integer.parseInt(getEnd1Field.getText()));
-        arr_variable[1] = new Variable(Integer.parseInt(getA2Field.getText()), Integer.parseInt(getB2Field.getText()), Integer.parseInt(getF2Field.getText()), Integer.parseInt(getD2Field.getText()), Integer.parseInt(getEnd2Field.getText()));
-        arr_variable[2] = new Variable(Integer.parseInt(getA3Field.getText()), Integer.parseInt(getB3Field.getText()), Integer.parseInt(getF3Field.getText()), Integer.parseInt(getD3Field.getText()), Integer.parseInt(getEnd3Field.getText()));
+        if (Integer.parseInt(getA1Field.getText()) > 0 && Integer.parseInt(getA2Field.getText()) > 0 && Integer.parseInt(getA3Field.getText()) > 0 &&
+                Integer.parseInt(getB1Field.getText()) > 0 && Integer.parseInt(getB2Field.getText()) > 0 && Integer.parseInt(getB3Field.getText()) > 0 &&
+                Integer.parseInt(getF1Field.getText()) > 0 && Integer.parseInt(getF2Field.getText()) > 0 && Integer.parseInt(getF3Field.getText()) > 0 &&
+                Integer.parseInt(getD1Field.getText()) > 0 && Integer.parseInt(getD2Field.getText()) > 0 && Integer.parseInt(getD3Field.getText()) > 0 &&
+                Integer.parseInt(getEnd1Field.getText()) > 0 && Integer.parseInt(getEnd2Field.getText()) > 0 && Integer.parseInt(getEnd3Field.getText()) > 0 &&
+                Integer.parseInt(getB1Field.getText()) > Integer.parseInt(getA1Field.getText()) && Integer.parseInt(getF1Field.getText()) > Integer.parseInt(getB1Field.getText()) &&
+                Integer.parseInt(getD1Field.getText()) > Integer.parseInt(getF1Field.getText()) && Integer.parseInt(getEnd1Field.getText()) > Integer.parseInt(getF1Field.getText()) &&
+                Integer.parseInt(getB2Field.getText()) > Integer.parseInt(getA2Field.getText()) && Integer.parseInt(getF2Field.getText()) > Integer.parseInt(getB2Field.getText()) &&
+                Integer.parseInt(getD2Field.getText()) > Integer.parseInt(getF2Field.getText()) && Integer.parseInt(getEnd2Field.getText()) > Integer.parseInt(getF2Field.getText()) &&
+                Integer.parseInt(getB3Field.getText()) > Integer.parseInt(getA3Field.getText()) && Integer.parseInt(getF3Field.getText()) > Integer.parseInt(getB3Field.getText()) &&
+                Integer.parseInt(getD3Field.getText()) > Integer.parseInt(getF3Field.getText()) && Integer.parseInt(getEnd3Field.getText()) > Integer.parseInt(getF3Field.getText())
+        ) {
+            arr_variable[0] = new Variable(Integer.parseInt(getA1Field.getText()), Integer.parseInt(getB1Field.getText()),
+                    Integer.parseInt(getF1Field.getText()), Integer.parseInt(getD1Field.getText()), Integer.parseInt(getEnd1Field.getText()));
+            arr_variable[1] = new Variable(Integer.parseInt(getA2Field.getText()), Integer.parseInt(getB2Field.getText()),
+                    Integer.parseInt(getF2Field.getText()), Integer.parseInt(getD2Field.getText()), Integer.parseInt(getEnd2Field.getText()));
+            arr_variable[2] = new Variable(Integer.parseInt(getA3Field.getText()), Integer.parseInt(getB3Field.getText()),
+                    Integer.parseInt(getF3Field.getText()), Integer.parseInt(getD3Field.getText()), Integer.parseInt(getEnd3Field.getText()));
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Ошибка инициализации переменных");
+            alert.setHeaderText("Ошибка введенных данных!");
+            alert.setContentText("Все введенные данные должны быть положительны. Границы лингвистических термов переменных должны монотонно возрастать.");
+
+            alert.showAndWait();
+        }
+
     }
 
     //выполнить алгоритм Мамдани
     @FXML
     protected void executeMamdani() {
         MamdaniAlgorithm Task = new MamdaniAlgorithm(arr_variable, table.getItems());
-        Task.setX1(Integer.parseInt(getX1Field.getText()));
-        Task.setX2(Integer.parseInt(getX2Field.getText()));
-        Task.execute();
-        LoadBalance lb = new LoadBalance(Task.getOutput_value());
-        loadBalanceResultArea.setText("Время обработки трафика: " + lb.getProcess_time() + "\n" + lb.getRoute_numbers());
+        if (Integer.parseInt(getX1Field.getText()) > 0 && Integer.parseInt(getX2Field.getText()) > 0) {
+            Task.setX1(Integer.parseInt(getX1Field.getText()));
+            Task.setX2(Integer.parseInt(getX2Field.getText()));
+            Task.execute();
+            LoadBalance lb = new LoadBalance(Task.getOutput_value());
+            loadBalanceResultArea.setText("Время обработки трафика: " + lb.getProcess_time() + "\n" + lb.getRoute_numbers());
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Ошибка проведения маршрутизации");
+            alert.setHeaderText("Ошибка введенных данных!");
+            alert.setContentText("Четкие значения входных переменных должны быть положительны.");
+
+            alert.showAndWait();
+        }
     }
 }

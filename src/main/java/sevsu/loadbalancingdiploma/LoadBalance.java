@@ -21,9 +21,10 @@ public class LoadBalance {
             this.route_numbers = "Требуется один маршрут для балансировки траффика.";
         } else if (this.process_time <= 500) {
             this.route_numbers = "Требуется два маршрута для балансировки траффика.";
-        } else if (this.process_time <= 750) {
+        } else if (this.process_time <= 700) {
             this.route_numbers = "Требуется три маршрута для балансировки траффика.";
         } else this.route_numbers = "Требуется четыре маршрута для балансировки траффика.";
+        if (this.process_time == 0) this.route_numbers = "Ошибка балансировки, время обработки равно нулю";
     }
 }
 
